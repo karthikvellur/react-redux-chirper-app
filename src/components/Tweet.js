@@ -51,7 +51,7 @@ class Tweet extends Component{
                             {
                                 hasLiked === true ? 
                                 <TiHeartFullOutline color='#e0245e' className='tweet-icon'/> :
-                                <TiHeartFullOutline className='tweet-icon'/>
+                                <TiHeartOutline className='tweet-icon'/>
                             }
                         </button>
                         <span>{ likes !== 0 && likes }</span>
