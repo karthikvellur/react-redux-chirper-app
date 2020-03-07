@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { handleAddTweet } from '../actions/tweets'
 
 /**
  * Controlled Component
@@ -25,8 +27,9 @@ class NewTweet extends Component{
         e.preventDefault()
 
         const { text } = this.state
+        const { dispatch, id } = this.props
         
-        console.log('New Tweet: ', text)
+        dispatch(handleAddTweet(text, id))
 
         this.setState(
             () => {
@@ -37,8 +40,6 @@ class NewTweet extends Component{
     }
 
     render(){
-
-        {/* todo: re-direct to home view if tweet is submittted*/}
 
         const { text } = this.state
 
@@ -73,4 +74,4 @@ class NewTweet extends Component{
     }
 }
 
-export default NewTweet
+export default connect()(NewTweet)
